@@ -31,4 +31,31 @@
     }
   });
 
+  // Ex3
+  var ex3_element = document.getElementById('ex3_element');
+  var ex3_two = document.getElementById('ex3_two');
+  ex3_element.setAttribute('draggable', true);
+
+
+
+  ex3_element.addEventListener('dragstart', function(event) {
+    event.dataTransfer.setData('text/plain', event.target.id);
+  })
+
+
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+
+
+  function drop(event) {
+    event.preventDefault();
+    const data = event.dataTransfer.getData('text/plain');
+    const element = document.getElementById(data);
+    event.target.appendChild(element);
+  }
+
+  ex3_two.addEventListener('dragover', allowDrop);
+  ex3_two.addEventListener('drop', drop);
+
 })();   
