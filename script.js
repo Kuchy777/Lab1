@@ -36,6 +36,8 @@
   var ex3_two = document.getElementById('ex3_two');
   ex3_element.setAttribute('draggable', true);
 
+  var ex3_one = document.getElementById('ex3_one');
+
 
 
   ex3_element.addEventListener('dragstart', function(event) {
@@ -57,5 +59,7 @@
 
   ex3_two.addEventListener('dragover', allowDrop);
   ex3_two.addEventListener('drop', drop);
+  ex3_one.addEventListener('dragover', allowDrop);
+  ex3_one.addEventListener('drop', drop);
 
 })();   
